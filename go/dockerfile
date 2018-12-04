@@ -1,6 +1,10 @@
-FROM golang:1.11.2-stretch
+FROM golang:1.11.2-stretch as builder
 
 COPY . /src
 WORKDIR /src
+RUN go build -o output ./demo/
 
-RUN go build
+FROM ubuntu:16.04
+
+COPY --from=builder /src/output /usr/bin/demo
+ENTRYPOINT [ "demo" ]
