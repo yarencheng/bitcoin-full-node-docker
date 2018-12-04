@@ -1,0 +1,6 @@
+FROM golang:1.11.2-stretch
+
+COPY . /src
+WORKDIR /src
+
+RUN go build
