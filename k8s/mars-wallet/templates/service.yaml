@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "mars-wallet.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "mars-wallet.name" . }}
+    helm.sh/chart: {{ include "mars-wallet.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: {{ include "mars-wallet.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
