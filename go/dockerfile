@@ -2,9 +2,9 @@ FROM golang:1.11.2-stretch as builder
 
 COPY . /src
 WORKDIR /src
-RUN go build -o output ./demo/
+RUN make
 
 FROM ubuntu:16.04
 
-COPY --from=builder /src/output /usr/bin/demo
-ENTRYPOINT [ "demo" ]
+COPY --from=builder /go/bin/server /usr/bin/server
+ENTRYPOINT [ "server" ]

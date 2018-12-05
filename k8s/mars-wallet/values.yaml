@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: nginx
-  tag: stable
+  repository: asia.gcr.io/mystical-rhino-224503/mars-wallet/btc-fullnode
+  tag: latest
   pullPolicy: IfNotPresent
 
 nameOverride: ""
