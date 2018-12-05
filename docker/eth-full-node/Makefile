@@ -1,5 +1,5 @@
 ifndef DOCKER_TAG
-DOCKER_TAG=asia.gcr.io/mystical-rhino-224503/mars-wallet/btc-fullnode
+DOCKER_TAG=asia.gcr.io/mystical-rhino-224503/mars-wallet/eth-fullnode
 endif
 
 .PHONY : all
