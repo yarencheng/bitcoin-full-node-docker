@@ -1,5 +1,5 @@
 
-SUBDIRS = go docker/btc-full-node docker/eth-full-node
+SUBDIRS = go docker/btc-full-node docker/eth-full-node docker/http-server
 INSTALLDIRS = $(SUBDIRS:%=install-%)
 CLEANDIRS = $(SUBDIRS:%=clean-%)
 
